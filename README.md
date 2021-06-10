@@ -189,7 +189,8 @@ sensor:
 Then run one of the two binaries, in my specific case I'm using jbdtool.exe with this command:
 
 ```
-jbdtool.exe -d 9 -t ip:172.16.10.99 -m 172.16.9.12:GABO-WORKSTATION:LIFEPO4 -i 5```
+jbdtool.exe -d 9 -t ip:172.16.10.99 -m 172.16.9.12:GABO-WORKSTATION:LIFEPO4 -i 5
+```
 
 
 Replace 172.16.10.99 with your USR-DR302 IP address, remember to have the USR-DR302 on TCP-Server Port 23.
@@ -200,10 +201,8 @@ Replace GABO-WORKSTATION with your CLIENTID.
 
 Adjust -i 5 to your needs, in seconds.
 
-
-
 I setup a Scheduled Task on Windows for the moment, to run this command at computer startup, then will move on to a docker container when I find how to do it.
 
+Then you will have nice sensors on Home Assistant to be used!
 
-
-Any suggestion is welcome!
+Any suggestions are welcome!

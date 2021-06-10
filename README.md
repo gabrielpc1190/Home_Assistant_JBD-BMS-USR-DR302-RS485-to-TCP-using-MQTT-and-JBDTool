@@ -3,13 +3,13 @@ This is basic information on how to use the JBD BMS LIFEPO (Overkill Solar) RS48
 This is basic information on how to use the JBD BMS (Overkill Solar) on RS485 connected to the RS485 to TCP adapter USR-DR302 in Home Assistant, using jbdtool or jbd for Windows to push to MQTT broker on Home Assistant: (sorry, I needed to include all key words for better search results ;-))
 
 
-You need to have an MQTT broker working, I used this guide on Youtube [MEDIA=youtube]dqTn-Gk4Qeo[/MEDIA]
+You need to have an MQTT broker working, I used this guide on Youtube: https://www.youtube.com/watch?v=dqTn-Gk4Qeo
 
 After MQTT is working, Create the sensors on your configuration.yaml file:
 
 
-
-[CODE]sensor:
+```
+sensor:
 
 # Example configuration.yaml entry: https://www.home-assistant.io/integrations/sensor.mqtt/
 
@@ -181,13 +181,16 @@ After MQTT is working, Create the sensors on your configuration.yaml file:
 
   json_attributes_template: "{{ value_json.Temps | tojson }}"
 
-[/CODE]
+```
+
 
 
 
 Then run one of the two binaries, in my specific case I'm using jbdtool.exe with this command:
 
-[CODE]jbdtool.exe -d 9 -t ip:172.16.10.99 -m 172.16.9.12:GABO-WORKSTATION:LIFEPO4 -i 5[/CODE]
+```
+jbdtool.exe -d 9 -t ip:172.16.10.99 -m 172.16.9.12:GABO-WORKSTATION:LIFEPO4 -i 5```
+
 
 Replace 172.16.10.99 with your USR-DR302 IP address, remember to have the USR-DR302 on TCP-Server Port 23.
 
